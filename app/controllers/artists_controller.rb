@@ -7,7 +7,6 @@ class ArtistsController < ApplicationController
   def show
     @artist = Artist.find_by(id: params[:id])
     @songs = Song.where(artist_id: @artist.id)
-    puts @songs
   end
 
   def new
@@ -17,6 +16,7 @@ class ArtistsController < ApplicationController
     @artist = Artist.new
     @artist.name = params[:name]
     @artist.description = params[:description]
+    @artist.imgurl = params[:imgurl]
 
     if @artist.save
       redirect_to "/artists/#{ @artist.id }"
@@ -33,6 +33,7 @@ class ArtistsController < ApplicationController
     @artist = Artist.find_by(id: params[:id])
     @artist.name = params[:name]
     @artist.description = params[:description]
+    @artist.imgurl = params[:imgurl]
 
     if @artist.save
       redirect_to "/artists/#{ @artist.id }"

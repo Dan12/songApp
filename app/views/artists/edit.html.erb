@@ -1,26 +1,5 @@
 <div class="row">
   <div class="col-md-8 col-md-offset-2">
-    <h1>Edit Song</h1>
-    <form action="/songs/<%=@song.id%>/update">
-      <div class="form-group">
-        <label for="idea" class="control-label">Name</label>
-        <input type="text" name="name" class="form-control" placeholder="name">
-      </div>
-      <div class="form-group">
-        <label for="idea" class="control-label">Cover Image Url</label>
-        <input type="text" name="coverurl" class="form-control" placeholder="http://">
-      </div>
-      <div class="form-group">
-        <label for="idea" class="control-label">Artist Id</label>
-        <input type="text" name="artist_id" class="form-control" placeholder="1" value="<%=@artistId%>">
-      </div>
-      <input type="submit" class="btn btn-primary">
-    </form>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-md-8 col-md-offset-2">
     <h1>Edit Artist</h1>
     <form action="/artists/<%=@artist.id%>/update">
       <div class="form-group">
@@ -30,6 +9,10 @@
       <div class="form-group">
         <label for="idea" class="control-label">Description</label>
         <input type="text" name="description" class="form-control" placeholder="description" value="<%=@artist.description%>">
+      </div>
+      <div class="form-group">
+        <label for="idea" class="control-label">Image Url</label>
+        <input type="text" name="imgurl" class="form-control" placeholder="http://" value="<%=@artist.imgurl%>">
       </div>
       <input type="submit" class="btn btn-primary">
     </form>
