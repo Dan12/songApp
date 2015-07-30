@@ -1,21 +1,21 @@
-<h1>Editing Song #<%= @song.id %></h1>
-
-<form action="/songs/<%= @song.id %>/update">
-  <div>
-    <label for="name">name</label><br />
-    <input id="name" name="name" value="<%= @song.name  %>" type="text" />
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <h1>Edit Song</h1>
+    <form action="/songs/<%=@song.id%>/update">
+      <div class="form-group">
+        <label for="idea" class="control-label">Name</label>
+        <input type="text" name="name" class="form-control" placeholder="name" value="<%=@song.name%>">
+      </div>
+      <div class="form-group">
+        <label for="idea" class="control-label">Cover Image Url</label>
+        <input type="text" name="coverurl" class="form-control" placeholder="http://" value="<%=@song.coverurl%>">
+      </div>
+      <div class="form-group">
+        <label for="idea" class="control-label">Artist Id</label>
+        <input type="text" name="artist_id" class="form-control" placeholder="1" value="<%=@song.artist_id%>">
+      </div>
+      <input type="submit" class="btn btn-primary">
+    </form>
   </div>
-  <div>
-    <label for="coverurl">coverurl</label><br />
-    <input id="coverurl" name="coverurl" value="<%= @song.coverurl  %>" type="text" />
-  </div>
-  <div>
-    <label for="artist_id">artist_id</label><br />
-    <input id="artist_id" name="artist_id" value="<%= @song.artist_id  %>" type="text" />
-  </div>
-  <div>
-    <input type="submit">
-  </div>
-</form>
-
+</div>
 

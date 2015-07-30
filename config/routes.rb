@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   
   # Routes for the Song resource:
   # CREATE
-  get '/new_song' => 'songs#new'
+  get '/new_song/:id' => 'songs#new'
   get '/create_song' => 'songs#create'
 
   # READ

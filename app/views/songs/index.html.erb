@@ -2,30 +2,8 @@
 
 <p><a href="/new_song">Add a New Song</a></p>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Coverurl</th>
-      <th>Artist</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-  <% @songs.each do |song| %>
-    <tr>
-          <td><%= song.name %></td>
-          <td><%= song.coverurl %></td>
-          <td><%= song.artist_id %></td>
-          <td><a href="/songs/<%= song.id %>">Show</a>
-        </td>
-      <td><a href="/songs/<%= song.id %>/edit">Edit</a></td>
-      <td><a href="/songs/<%= song.id %>/destroy">Destroy</a></td>
-    </tr>
-  <% end %>
-  </tbody>
-</table>
-
+<% @songs.each do |song| %>
+  <a href="/songs/<%=song.id%>" style="text-decoration:none">
+    <h3><%=song.name%></h3>
+  </a>
+<%end%>

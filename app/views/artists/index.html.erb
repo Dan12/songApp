@@ -2,28 +2,8 @@
 
 <p><a href="/new_artist">Add a New Artist</a></p>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-  <% @artists.each do |artist| %>
-    <tr>
-          <td><%= artist.name %></td>
-          <td><%= artist.description %></td>
-          <td><a href="/artists/<%= artist.id %>">Show</a>
-        </td>
-      <td><a href="/artists/<%= artist.id %>/edit">Edit</a></td>
-      <td><a href="/artists/<%= artist.id %>/destroy">Destroy</a></td>
-    </tr>
-  <% end %>
-  </tbody>
-</table>
-
+<%@artists.each do |artist|%>
+<a href="/artists/<%=artist.id%>" style="text-decoration:none">
+  <h3><%=artist.name%> <small><%=artist.description%></small></h3>
+</a>
+<%end%>

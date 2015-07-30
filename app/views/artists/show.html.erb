@@ -1,13 +1,22 @@
-<h1>Artist #<%= @artist.id %></h1>
-
-<div>
-  <strong>Name</strong>:<br />
-  <p><%= @artist.name %></p>
+<div class="jumbotron">
+  <h1><%=@artist.name%></h1>
+  <p><%=@artist.description%></p>
 </div>
-<div>
-  <strong>Description</strong>:<br />
-  <p><%= @artist.description %></p>
+<a href="/new_song/<%= @artist.id %>">Add Song</a>
+<br>
+<br>
+<div class="row">
+  <%@songs.each do |song|%>
+  <div class="col-xs-3">
+    <a href="/songs/<%=song.id%>" class="thumbnail">
+      <img src="<%=song.coverurl%>" alt="">
+    </a>
+    <h4><%=song.name%></h4>
+  </div>
+  <%end%>
 </div>
-
+<br>
+<br>
 <a href="/artists/<%= @artist.id %>/edit">Edit</a> |
-<a href="/artists/<%= @artist.id %>/destroy">Destroy</a>
+<a href="/artists/<%= @artist.id %>/destroy">Destroy</a> |
+<a href="/">Home</a>

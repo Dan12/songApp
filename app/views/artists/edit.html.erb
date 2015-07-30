@@ -1,17 +1,39 @@
-<h1>Editing Artist #<%= @artist.id %></h1>
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <h1>Edit Song</h1>
+    <form action="/songs/<%=@song.id%>/update">
+      <div class="form-group">
+        <label for="idea" class="control-label">Name</label>
+        <input type="text" name="name" class="form-control" placeholder="name">
+      </div>
+      <div class="form-group">
+        <label for="idea" class="control-label">Cover Image Url</label>
+        <input type="text" name="coverurl" class="form-control" placeholder="http://">
+      </div>
+      <div class="form-group">
+        <label for="idea" class="control-label">Artist Id</label>
+        <input type="text" name="artist_id" class="form-control" placeholder="1" value="<%=@artistId%>">
+      </div>
+      <input type="submit" class="btn btn-primary">
+    </form>
+  </div>
+</div>
 
-<form action="/artists/<%= @artist.id %>/update">
-  <div>
-    <label for="name">name</label><br />
-    <input id="name" name="name" value="<%= @artist.name  %>" type="text" />
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <h1>Edit Artist</h1>
+    <form action="/artists/<%=@artist.id%>/update">
+      <div class="form-group">
+        <label for="idea" class="control-label">Name</label>
+        <input type="text" name="name" class="form-control" placeholder="name" value="<%=@artist.name%>">
+      </div>
+      <div class="form-group">
+        <label for="idea" class="control-label">Description</label>
+        <input type="text" name="description" class="form-control" placeholder="description" value="<%=@artist.description%>">
+      </div>
+      <input type="submit" class="btn btn-primary">
+    </form>
   </div>
-  <div>
-    <label for="description">description</label><br />
-    <input id="description" name="description" value="<%= @artist.description  %>" type="text" />
-  </div>
-  <div>
-    <input type="submit">
-  </div>
-</form>
+</div>
 
 
